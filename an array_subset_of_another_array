@@ -1,0 +1,30 @@
+import java.util.HashSet;
+public class Main
+{
+    static boolean CheckSubset(int a1[],int a2[],int n,int m)
+    {
+        HashSet<Integer> hash=new HashSet();
+        for(int i=0;i<n;i++)
+        {
+            if(!hash.contains(a1[i]))  // hash stores all the values of array a1 
+            hash.add(a1[i]);
+        }
+         for(int i=0;i<m;i++)
+        {
+            if(!hash.contains(a2[i]))  // loop to check if all elements of array a2 lie in array a1
+            return false;
+        }
+        return true;
+    }
+    
+    
+	public static void main(String[] args) {
+	    
+	    int a1[]={1,22,35,2,6,7,11};
+	    int a2[]={35,2,11};
+	    int n=a1.length;
+	    int m=a2.length;
+	    System.out.println(CheckSubset(a1,a2,n,m)? "Yes it is subset " :"No not a subset");
+		//System.out.println("Hello World");
+	}
+}
