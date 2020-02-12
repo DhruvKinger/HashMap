@@ -1,0 +1,20 @@
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,int> mp,mp1; // initialize container 
+    
+     mp.insert({2,20});  // initialize container 
+     mp.insert({1,10});
+     mp.insert({4,30});
+     mp1.insert(mp.begin(),mp.end());
+     cout<<"Elements in mp1 are:\n";
+     for(auto &i:mp1)
+     {
+         cout<<i.first<<"\t"<<i.second<<"\n";
+     }
+    return 0;
+}
